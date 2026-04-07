@@ -5,12 +5,14 @@
 ![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-1.6.1-orange.svg)
 ![Sentence-Transformers](https://img.shields.io/badge/Sentence--Transformers-5.3.0-yellow.svg)
 
+---
 
 ## 📌 프로젝트 요약 (Project Overview)
 Sentence-Transformers와 코사인 유사도를 활용해 텍스트의 문맥을 분석하고 최적의 결과를 매칭하는 의미 검색(Semantic Search) 시스템.
 1. **[속담 시험출제기]** 특정 상황을 묘사하는 텍스트를 입력하면 해당 맥락과 가장 잘 어울리는 속담을 찾아 매칭하는 시스템을 구현.
 2. **[유사 상황 대화 검색기]** 사용자의 질문이나 감정 상태를 입력받아 기존 대화 데이터베이스에서 가장 유사한 문맥을 가진 대화를 찾아내는 검색기를 구축.
 
+---
 
 ## 🎯 핵심 목표 (Motivation)
 | 구분 | 세부 내용 |
@@ -19,6 +21,7 @@ Sentence-Transformers와 코사인 유사도를 활용해 텍스트의 문맥을
 | **벡터 공간 최적화** | 텍스트를 벡터로 변환한 후 데이터베이스의 벡터들과의 거리를 효율적으로 연산하는 로직을 코드로 구현. |
 | **코사인 유사도 활용** | 벡터의 크기가 아닌 '방향'을 기준으로 유사도를 측정하여 텍스트 길이에 구애받지 않는 안정적인 검색 결과를 확보. |
 
+---
 
 ## 🚨 개념 및 파이프라인 (Concept & Pipeline)
 | 항목 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 세부 내용 |
@@ -27,6 +30,7 @@ Sentence-Transformers와 코사인 유사도를 활용해 텍스트의 문맥을
 | **사용**<br>**알고리즘** | `paraphrase-multilingual-MiniLM-L12-v2` 모델 (문장 임베딩), `cosine_similarity` (유사도 연산) |
 | **검색**<br>**<nobr>파이프라인</nobr>** | 1. DB 텍스트 사전 임베딩 및 벡터 저장<br>2. 사용자 입력(Query) 실시간 임베딩 변환<br>3. Query 벡터와 DB 벡터 간 코사인 유사도 일괄 계산<br>4. 유사도 기준 내림차순 정렬 후 Top-K 결과 반환 |
 
+---
 
 ## 1. 프로젝트 구조 (Repository Structure)
 ```text
@@ -39,6 +43,7 @@ Sentence-Transformers와 코사인 유사도를 활용해 텍스트의 문맥을
 └── 📄 requirements.txt
 ```
 
+---
 
 ## 2. 실험 결과 및 분석 (Results & Analysis)
 | 환경 및 과제 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 테스트 결과 | 엔지니어링 분석 포인트 |
@@ -47,6 +52,7 @@ Sentence-Transformers와 코사인 유사도를 활용해 텍스트의 문맥을
 | **일상&nbsp;대화&nbsp;검색**<br>**(구어체&nbsp;텍스트)** | **보통**<br>**(왜곡)** | 짧은 구어체 대화의 경우 전체적인 긍정/부정 어조보다는 문장에 포함된 특정 명사('날씨', '회사' 등)에 벡터 방향이 강하게 이끌려 원래 의도와 다소 어긋나는 대화가 검색되는 현상을 확인. |
 | **연산&nbsp;속도&nbsp;검증**<br>**(확장성)** | **개선**<br>**(필요)** | 데이터베이스의 크기가 커질수록 모든 문장과 코사인 유사도를 일일이 연산해야 하므로, 선형적으로 검색 시간이 증가하는 구조적 한계를 관찰. |
 
+---
 
 ## 💡 회고록 (Retrospective)
   &emsp;이번 프로젝트를 통해 텍스트를 고정된 클래스로 분류하던 이전 방식을 넘어, 다차원 벡터 공간에서 두 문장 간의 '각도(코사인 유사도)'를 계산해 가장 가까운 이웃을 찾아내는 검색(Retrieval) 모델의 본질을 깊이 체득할 수 있었습니다. 특히, 겹치는 단어가 전혀 없더라도 문장이 품고 있는 의미적 맥락이 유사하면 벡터 공간상에서 서로 가까운 좌표에 매핑되어 성공적으로 결과를 도출해 내는 과정을 보며 임베딩(Embedding) 기술의 강력함을 체감했습니다.
