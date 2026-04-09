@@ -1,5 +1,4 @@
 # 🔍 Text Embedding & Cosine Similarity-Based Semantic Search System
-**텍스트 임베딩 및 코사인 유사도 기반 의미 검색 시스템 구축 (속담 시험출제기 & 유사 상황 대화 검색기 🔍 Text Embedding & Cosine Similarity-Based Semantic Search System
 **텍스트 임베딩 및 코사인 유사도 기반 의미 검색 시스템 구축 (속담 시험출제기 & 유사 상황 대화 검색기)**
 
 ![Python](https://img.shields.io/badge/Python-3.10-blue.svg)
