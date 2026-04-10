@@ -40,7 +40,7 @@ Sentence-Transformers와 코사인 유사도(cosine-similarity) 를 활용하여
 ├── 📄 02_유사_상황_대화_검색기.py
 ├── 📄 LICENSE
 ├── 📄 README.md
-└── 📄 requirements.txt
+├── 📄 requirements.txt
 ```
 
 ---
