@@ -15,7 +15,7 @@ Sentence-Transformers와 코사인 유사도(cosine-similarity) 를 활용하여
 ---
 
 ## 🎯 핵심 목표 (Motivation)
-| 구분 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 세부 내용 |
+| 구분 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 세부 내용 |
 | :--- | :--- |
 | **의미 기반 검색** | 키워드가 일치하지 않아도 문장이 내포한 의미와 상황의 유사성을 계산하여 결과를 도출하는 시스템을 설계 |
 | **벡터 공간 최적화** | 텍스트를 벡터로 변환한 후 데이터베이스의 벡터들과의 거리를 효율적으로 연산하는 로직을 코드로 구현 |
